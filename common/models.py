@@ -1,5 +1,4 @@
 from django.db import models
-from .models import Feed
 
 class CommonModel(models.Model):
      created = models.DateTimeField(auto_now_add=True)

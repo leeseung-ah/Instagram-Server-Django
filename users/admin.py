@@ -4,9 +4,13 @@ from .models import User
 
 @admin.register(User)
 class CustomerUserAdmin(UserAdmin):
-     list_display=(
-          "username",
-          "profileImg",
-          "profileInfo",
-          "followNum",
-     )
+       fieldsets = (
+        ("Personal info"), {"fields": 
+            ("email", "password", "username", 
+            "profileIntroduce", "followerNum", "profileImg")}
+    ),
+       list_display=(
+        "username",
+        "profileIntroduce",
+        "followerNum"
+    )
